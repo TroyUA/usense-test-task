@@ -1,16 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { PasswordStrengthMeterComponent } from './password-strength-meter/password-strength-meter.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterModule.forRoot([])
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterModule.forRoot([])],
+      declarations: [AppComponent, PasswordStrengthMeterComponent],
     }).compileComponents();
   });
 
@@ -30,6 +27,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, usense-test-task');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, usense-test-task'
+    );
   });
 });
